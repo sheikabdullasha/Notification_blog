@@ -1,6 +1,6 @@
 async function init() {
 
-  const registration = await navigator.serviceWorker.register('https://github.com/sheikabdullasha/Push_Note-javascriptt/blob/main/sw.js')
+  const registration = await navigator.serviceWorker.register('https://github.com/sheikabdullasha/Notification_blog/blob/main/docs/sw.js')
 
   console.log("waiting for service worker connection");
   console.log("reg :",registration);
