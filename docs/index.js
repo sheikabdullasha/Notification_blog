@@ -2,7 +2,7 @@ async function init() {
 
   const registration = await navigator.serviceWorker.register('./sw.js').then((registration) => {
     // registration worked
-    console.log('Registration succeeded. Scope is ' + registration.active);
+    console.log('Registration succeeded. Scope is ' + registration);
   }).catch((error) => {
     // registration failed
     console.log('Registration failed with ' + error);
