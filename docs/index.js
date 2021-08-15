@@ -1,6 +1,6 @@
 async function init() {
 
-  const registration = await navigator.serviceWorker.register('https://github.com/sheikabdullasha/Notification_blog/sw.js')
+  const registration = await navigator.serviceWorker.register('/Notification_blog/docs/sw.js');
 
   console.log("waiting for service worker connection");
   console.log("reg :",registration);
