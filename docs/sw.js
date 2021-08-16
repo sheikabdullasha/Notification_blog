@@ -20,20 +20,21 @@ console.log("******************************************");
 
 self.addEventListener('push', async event => {
 	// const db = await getDb();
-	const tx = this.db.transaction('jokes', 'readwrite');
-	console.log("heloooo",tx);
-	const store = tx.objectStore('jokes');
+// 	const tx = this.db.transaction('jokes', 'readwrite');
+// 	console.log("heloooo",tx);
+// 	const store = tx.objectStore('jokes');
 
-	const data = event.data.json().data;
-	data.id = parseInt(data.id);
-	store.put(data);
+// 	const data = event.data.json().data;
+// 	data.id = parseInt(data.id);
+// 	store.put(data);
+	console.log("heloooo",event.data);
 
-	tx.oncomplete = async e => {
-		const allClients = await clients.matchAll({ includeUncontrolled: true });
-		for (const client of allClients) {
-			client.postMessage('newData');
-		}
-	};
+// 	tx.oncomplete = async e => {
+// 		const allClients = await clients.matchAll({ includeUncontrolled: true });
+// 		for (const client of allClients) {
+// 			client.postMessage('newData');
+// 		}
+// 	};
 });
 
 async function getDb() {
@@ -84,6 +85,7 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
+	console.log("fetch lister from sw.js is :",event);
 	event.respondWith(
 		caches.match(event.request)
 			.then(response => {
