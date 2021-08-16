@@ -71,11 +71,11 @@ messaging.setBackgroundMessageHandler(function(payload) {
 
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
-	'/index.html',
-	'/index.js',
-	'/mail.png',
-	'/mail2.png',
-	'/manifest.json'
+	'./index.html',
+	'./index.js',
+	'./mail.png',
+	'./mail2.png',
+	'./manifest.json'
 ];
 
 self.addEventListener('install', event => {
